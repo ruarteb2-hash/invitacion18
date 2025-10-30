@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>fiesta hawaiana – mis 18 años – leandro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=pacifico&family=inter:wght400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Fondo degradado tropical a pantalla completa */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:'inter',sans-serif;
+      background: linear-gradient(135deg, #fec8a0 0%, #faaac2 30%, #f89088 70%, #ff8ca0 100%);
+      background-attachment: fixed;
+    }
+
+    .full-height{min-height:100vh}
+    .center-screen{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+      padding:24px;
+      color:white;
+      /* Transición Ultra Rápida */
+      transition: opacity 0.1s ease-out; 
+    }
+    .welcome-title{font-family:'pacifico',cursive;font-size:clamp(28px,6vw,56px);text-shadow:0 6px 20px rgba(0,0,0,0.4)}
+    .welcome-sub{font-size:clamp(16px,2.5vw,22px);margin-top:12px;font-weight:600}
+    .enter-btn{margin-top:22px;background:#ffcb6b;color:#1f2937;padding:12px 20px;border-radius:12px;font-weight:800;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+    .invitation{
+      display:none;
+      padding:20px;
+      box-sizing:border-box;
+      opacity: 0; 
+      /* Transición Ultra Rápida */
+      transition: opacity 0.1s ease-in;
+    }
+
+    /* ... (El resto de tus estilos CSS - no cambiaron) ... */
+    .card{width:100%;max-width:980px;margin:24px auto;background:rgba(255, 248, 240, 0.92);border-radius:20px;padding:20px;box-shadow:0 10px 40px rgba(255, 107, 107, 0.3), 0 15px 50px rgba(255, 165, 0, 0.2);border:1px solid rgba(255, 200, 150, 0.5);position:relative;overflow:hidden}.main-title-container{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;text-align:center;margin-bottom:10px;position:relative}.main-title-emoji{font-size:clamp(20px, 4vw, 30px);flex-shrink:0;text-shadow:0 1px 2px rgba(0,0,0,0.1);line-height:1;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;display:inline-block;animation:shake 2s ease-in-out infinite}.main-title-emoji:nth-child(1){animation-delay:0s}.main-title-emoji:nth-child(2){animation-delay:.3s}.main-title-emoji:nth-child(3){animation-delay:.6s}@keyframes shake{0%,100%{transform:rotate(0deg) scale(1)}25%{transform:rotate(-8deg) scale(1.05)}75%{transform:rotate(8deg) scale(1.05)}}.main-title-text{font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(28px,6vw,50px);background:linear-gradient(to right, #FFA500, #FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 10px rgba(255,165,0,0.4);outline:none;width:auto;display:inline-block}.photo-slot{background:#eee;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;border:4px solid #964B00;box-shadow:inset 0 0 0 2px #FFD700, 0 4px 8px rgba(0,0,0,0.2);transition:all .2s ease-in-out;position:relative}.photo-slot:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 2px #FFE082, 0 8px 16px rgba(0,0,0,0.3)}.photo-slot img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1/1}.photo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.95);background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.25));opacity:0;transition:opacity .18s}.photo-slot:hover .photo-overlay{opacity:1}.input{width:100%;padding:.6rem .8rem;border-radius:10px;border:1px solid rgba(0,0,0,0.2);background:white;font-weight:600;color:#333;text-shadow:none}.input::placeholder{color:#888}.input:focus{outline:none;border-color:#f59e0b;background:#fff;box-shadow:0 0 0 2px rgba(245,158,11,0.3)}.btn{background:#2563eb;color:white;padding:.6rem 1rem;border-radius:12px;font-weight:700;display:inline-flex;gap:.6rem;align-items:center;cursor:pointer;text-decoration:none;box-shadow:0 4px 8px rgba(0,0,0,0.2)}.btn.secondary{background:#f59e0b;color:#1f2937}.small-note{font-size:13px;color:#666;text-shadow:none}.text-body-highlight{font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(24px, 5vw, 36px);background:linear-gradient(to right, #FF4500, #FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:1px 1px 8px rgba(255,100,0,0.8);margin-bottom:15px;display:inline-block}.input-highlight{font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(18px, 3.5vw, 24px);background:linear-gradient(to right, #E91E63, #FFEB3B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 5px rgba(255, 60, 100, 0.5);width:100%;padding:.6rem .8rem;border-radius:10px;border:1px solid rgba(0,0,0,0.2);background-color:rgba(255,255,255,0.9);color:transparent;text-align:center}.input-highlight::placeholder{background:linear-gradient(to right, #E91E63, #FFEB3B);-webkit-background-clip:text;-webkit-text-fill-color:rgba(0,0,0,0.6);text-shadow:none}.input-highlight:focus{outline:none;border-color:#f59e0b;background-color:#fff;box-shadow:0 0 0 2px rgba(245,158,11,0.3);-webkit-text-fill-color:#333;text-shadow:none}.text-preview-highlight{margin-top:12px;font-family:'pacifico',cursive;font-weight:normal;font-size:clamp(20px, 4vw, 28px);background:linear-gradient(to right, #FF4500, #FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:1px 1px 6px rgba(255,100,0,0.7);display:inline-block}.sunset-bg{background:rgba(255, 248, 240, 0.7);border-radius:0 0 18px 18px;padding:20px;margin:20px -20px -20px -20px;text-align:center;border-top:1px solid rgba(0,0,0,0.1);box-shadow:inset 0 8px 20px rgba(0,0,0,0.05);position:relative}.sunset-bg .text-1{font-size:16px;font-weight:700;color:#333;text-shadow:none}.sunset-bg .text-2{font-size:14px;color:#555;text-shadow:none}.footer-emojis{margin-top:10px;font-size:clamp(20px, 4vw, 30px);text-shadow:0 1px 2px rgba(0,0,0,0.1);display:flex;justify-content:center;gap:8px}.footer-emojis span{display:inline-block;animation:bounce 2s infinite ease-in-out}.footer-emojis span:nth-child(1){animation-delay:0s}.footer-emojis span:nth-child(2){animation-delay:.2s}.footer-emojis span:nth-child(3){animation-delay:.4s}.footer-emojis span:nth-child(4){animation-delay:.6s}.footer-emojis span:nth-child(5){animation-delay:.8s}@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:9999;opacity:0;transition:opacity 1s ease-out}.confetti-emoji{position:absolute;opacity:0;animation:fall var(--duration) linear forwards;--start-y-offset:-50px;--end-y-offset:105vh}@keyframes fall{0%{transform:translate(var(--x-start),var(--start-y-offset)) rotateZ(0deg) scale(0);opacity:0}1%{transform:translate(var(--x-start),var(--start-y-offset)) rotateZ(0deg) scale(var(--size));opacity:1}100%{transform:translate(calc(var(--x-start) + var(--x-end-offset)),var(--end-y-offset)) rotateZ(var(--rotation)) scale(calc(var(--size) * .7));opacity:1}}@media (max-width:640px){.card{padding:16px}.main-title-container{gap:8px}.main-title-text{font-size:clamp(24px, 6vw, 40px)}.text-body-highlight{font-size:clamp(22px, 5vw, 30px)}.input-highlight,.text-preview-highlight{font-size:clamp(18px, 3.8vw, 22px)}}
+  </style>
+</head>
+<body class="full-height">
+
+  <svg width="0" height="0" style="position:absolute;z-index:-1;"><defs><linearGradient id="hibiscusGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#FF8C66;stop-opacity:1" /> <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" /> </linearGradient></defs></svg>
+  <audio id="musicPlayer" loop><source src="https://archive.org/download/danza-kuduro/Danza%20Kuduro.mp3" type="audio/mpeg">Tu navegador no soporta audio.</audio>
+  <div id="welcomeScreen" class="center-screen full-height">
+    <h1 class="welcome-title">🌺 ¡Aloha! 🌴</h1>
+    <p class="welcome-sub">Bienvenido a mi fiesta hawaiana – mis 18 años – Leandro 🎉</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px">
+      <button id="enterBtn" class="enter-btn">Entrar a la invitación 🌺</button>
+    </div>
+  </div>
+
+  <div id="invitation" class="invitation">
+    <div class="card" role="main">
+
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap"><div class="main-title-container"><span class="main-title-emoji">🥳</span><span class="main-title-emoji">🎉</span><span class="main-title-emoji">🎊</span><div id="eventTitle" contenteditable="true" class="main-title-text">Fiesta Hawaiana – Mis 18 años – Leandro</div></div><div style="display:flex;gap:8px;align-items:center; position: relative;"><button id="playPauseBtn" class="btn secondary" title="Pausar / Reanudar música">▶️ Reproducir</button></div></div>
+      
+      <div class="photo-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px">
+          <label class="photo-slot" tabindex="0">
+              <input type="file" accept="image/*" class="image-input" style="display:none" />
+              <img id="photo1" src="https://via.placeholder.com/300/eee/999?text=Cargando..." alt="Foto 1"/>
+              <div class="photo-overlay"></div>
+          </label>
+          <label class="photo-slot" tabindex="0">
+              <input type="file" accept="image/*" class="image-input" style="display:none" />
+              <img id="photo2" src="https://via.placeholder.com/300/eee/999?text=Cargando..." alt="Foto 2"/>
+              <div class="photo-overlay"></div>
+          </label>
+          <label class="photo-slot" tabindex="0">
+              <input type="file" accept="image/*" class="image-input" style="display:none" />
+              <img id="photo3" src="https://via.placeholder.com/300/eee/999?text=Cargando..." alt="Foto 3"/>
+              <div class="photo-overlay"></div>
+          </label>
+          <label class="photo-slot" tabindex="0">
+              <input type="file" accept="image/*" class="image-input" style="display:none" />
+              <img id="photo4" src="https://via.placeholder.com/300/eee/999?text=Cargando..." alt="Foto 4"/>
+              <div class="photo-overlay"></div>
+          </label>
+      </div>
+      
+      <div style="text-align:center;margin-top:20px; position: relative;"><div class="text-body-highlight">Estás invitado a celebrar el día</div><div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:14px"><input id="dayInput" class="input-highlight" placeholder="Día (ej: Sábado)" value="Sábado" contenteditable="true"/><input id="dateInput" class="input-highlight" placeholder="Fecha (ej: 14/02/2026)" value="15/11/2025" contenteditable="true"/><input id="timeInput" class="input-highlight" placeholder="Hora (ej: 22:00)" value="13:00 - 23:00" contenteditable="true"/></div><div style="margin-top:12px;max-width:720px;margin-left:auto;margin-right:auto"><input id="placeInput" class="input-highlight" placeholder="Ubicación" value="Salón de Eventos SG, La Rioja" contenteditable="true"/><div style="display:flex;gap:8px;justify-content:center;margin-top:8px"><button id="openMaps" class="btn">📍 Abrir en Google Maps</button><button id="copyMaps" class="btn secondary">🔗 Copiar enlace</button></div></div><div id="previewWhen" class="text-preview-highlight"></div></div>
+      
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;margin-top:18px; position: relative;"><a id="whatsappBtn" class="btn" target="_blank" rel="noopener noreferrer">📲 Confirmar por WhatsApp</a></div><div class="sunset-bg"><div class="text-1">¡Código de vestimenta: 🌿 playero tropical!</div><div class="text-2">Traé buena onda y ganas de bailar. 🌺</div></div><hr style="margin:18px 0; border-color: rgba(100, 50, 0, 0.1);"/><div style="text-align: center; position: relative;"><div class="footer-emojis"><span>🎊</span><span>🌴</span><span>🥳</span><span>🌴</span><span>🎊</span></div></div>
+    </div>
+  </div>
+
+  <div id="confettiContainer" class="confetti-container"></div>
+
+  <script>
+    const music = document.getElementById('musicPlayer');
+    function tryPlayMusic(){ 
+      music.play().catch((e)=>{
+        console.log("No se pudo reproducir la música automáticamente:", e);
+      }); 
+    }
+
+    const welcome = document.getElementById('welcomeScreen');
+    const invitation = document.getElementById('invitation');
+    const enterBtn = document.getElementById('enterBtn');
+    const confettiContainer = document.getElementById('confettiContainer');
+
+    function createConfetti() {
+      const emojis = ['🎉', '🎊', '🎈', '🌴']; const totalConfetti = 150; const totalConfettiEffectDuration = 30000; const fadeOutContainerDuration = 1000; for (let i = 0; i < totalConfetti; i++) { const confetti = document.createElement('span'); confetti.classList.add('confetti-emoji'); confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)]; const randomSize = Math.random() * 0.8 + 0.7; confetti.style.setProperty('--size', randomSize); confetti.style.fontSize = `${randomSize * 25}px`; const initialX = (Math.random() * 140 - 20) + 'vw'; const startY = - (Math.random() * 100 + 50) + 'px'; const endXOffset = (Math.random() - 0.5) * 10; const randomRotation = (Math.random() * 720 - 360) + 'deg'; confetti.style.setProperty('--x-start', initialX); confetti.style.setProperty('--x-end-offset', `${endXOffset}vw`); confetti.style.setProperty('--rotation', randomRotation); const individualFallDuration = Math.random() * 8 + 12; confetti.style.setProperty('--duration', `${individualFallDuration}s`); confetti.style.animationDelay = `${Math.random() * 15}s`; confettiContainer.appendChild(confetti); } confettiContainer.style.opacity = '1'; setTimeout(() => { confettiContainer.style.opacity = '0'; setTimeout(() => { confettiContainer.innerHTML = ''; }, fadeOutContainerDuration); }, totalConfettiEffectDuration - fadeOutContainerDuration); 
+    }
+
+    // =======================================================================
+    // --- FUNCIÓN CLAVE PARA CARGAR FOTOS DESDE GITHUB ---
+    // =======================================================================
+    async function cargarFotosDesdeGitHub() {
+      // ⚠️ IMPORTANTE: REEMPLAZA ESTOS VALORES
+      const GITHUB_USER = 'TU_USUARIO'; // <--- ¡CÁMBIAME!
+      const GITHUB_REPO = 'TU_REPOSITORIO'; // <--- ¡CÁMBIAME!
+      const FOLDER_NAME = 'galeria'; 
+      // Si cambiaste la carpeta, actualiza 'galeria' arriba.
+
+      const urlApi = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FOLDER_NAME}`;
+      
+      const imgElements = [ 
+          document.getElementById('photo1'), 
+          document.getElementById('photo2'), 
+          document.getElementById('photo3'), 
+          document.getElementById('photo4') 
+      ];
+
+      try { 
+          const response = await fetch(urlApi); 
+          
+          if (response.status === 404) {
+             console.error('Error 404: No se encontró la carpeta o el repositorio.');
+             throw new Error('404: Revisa el nombre de usuario/repositorio/carpeta.');
+          }
+          if (!response.ok) { 
+              throw new Error(`Error ${response.status}: No se pudo conectar a GitHub.`); 
+          } 
+          
+          const files = await response.json(); 
+          
+          // Filtra solo archivos de imagen (png, jpg, etc.)
+          const imageFiles = files.filter(file => 
+              file.type === 'file' && /\.(jpe?g|png|gif|webp|avif)$/i.test(file.name)
+          ); 
+          
+          for (let i = 0; i < imgElements.length; i++) { 
+              if (imageFiles[i] && imageFiles[i].download_url) { 
+                  // Usa la URL de descarga directa de GitHub
+                  imgElements[i].src = imageFiles[i].download_url; 
+                  // Remueve el texto de placeholder para una mejor accesibilidad
+                  imgElements[i].alt = `Foto ${i + 1} de la fiesta`; 
+              } else { 
+                  // Si no hay más fotos en la carpeta
+                  imgElements[i].src = 'https://via.placeholder.com/300/f89088/fff?text=Subir+Foto'; 
+              } 
+          } 
+      } catch (error) { 
+          console.error('Error al cargar fotos desde GitHub:', error); 
+          imgElements.forEach(img => { 
+              // Muestra un error visible si falla la carga
+              img.src = 'https://via.placeholder.com/300/ff4500/fff?text=ERROR+EN+CARGA'; 
+              img.alt = 'Error al cargar imagen';
+          }); 
+      }
+    }
+    // =======================================================================
+
+    async function openInvitation(){ 
+      welcome.style.opacity = '0';
+      
+      // La función de carga se ejecuta en paralelo y actualiza las fotos
+      cargarFotosDesdeGitHub(); 
+      
+      setTimeout(() => {
+          welcome.style.display = 'none';
+          invitation.style.display = 'block';
+          document.body.style.overflow = 'auto';
+          setTimeout(() => {
+              invitation.style.opacity = '1';
+              tryPlayMusic(); 
+              createConfetti(); 
+          }, 10); 
+      }, 100); 
+    }
+    
+    enterBtn.addEventListener('click', openInvitation);
+
+    // Los invitados pueden cambiar la foto localmente si la carga de GitHub falla o quieren probar
+    document.querySelectorAll('.photo-slot').forEach((slot)=>{ 
+        const input = slot.querySelector('input[type=file]'); 
+        const img = slot.querySelector('img'); 
+        slot.addEventListener('click', ()=> input.click()); 
+        slot.addEventListener('keydown',(e)=>{ 
+            if(e.key==='Enter'||e.key===' ') input.click(); 
+        }); 
+        input.addEventListener('change', (ev)=>{ 
+            const file = ev.target.files[0]; 
+            if(!file) return; 
+            const reader = new FileReader(); 
+            reader.onload = (evt)=> img.src = evt.target.result; 
+            reader.readAsDataURL(file); 
+        }); 
+    });
+
+    // ... (Tu función de 'updatePreviewAndLinks' - no cambió)
+    const dayInput = document.getElementById('dayInput'); const dateInput = document.getElementById('dateInput'); const timeInput = document.getElementById('timeInput'); const placeInput = document.getElementById('placeInput'); const previewWhen = document.getElementById('previewWhen'); const whatsappBtn = document.getElementById('whatsappBtn'); const openMaps = document.getElementById('openMaps'); const copyMaps = document.getElementById('copyMaps'); function updatePreviewAndLinks(){ const d = dayInput.value.trim(); const date = dateInput.value.trim(); const t = timeInput.value.trim(); const place = placeInput.value.trim(); previewWhen.textContent = `${d ? d + ' • ' : ''}${date ? date + ' • ' : ''}${t ? t : ''}${place ? ' • ' + place : ''}`; let msg = `confirmo mi presencia para festejar los 18 años de leo 🥳🎉`; const waHref = 'https://wa.me/5493804973331?text=' + encodeURIComponent(msg); whatsappBtn.href = waHref; const mapsQuery = encodeURIComponent(place || ''); const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`; openMaps.onclick = ()=>{ if(!place){ alert('Escribí la ubicación primero.'); return; } window.open(mapsUrl, '_blank'); }; copyMaps.onclick = async ()=>{ if(!place){ alert('Escribí la ubicación primero.'); return; } try{ await navigator.clipboard.writeText(mapsUrl); copyMaps.textContent = '✅ Copiado'; setTimeout(()=> copyMaps.textContent = '🔗 Copiar enlace',1500); } catch(e){ prompt('Copiá este enlace:', mapsUrl); } }; }
+    [dayInput,dateInput,timeInput,placeInput].forEach(i=>i.addEventListener('input', updatePreviewAndLinks)); document.getElementById('eventTitle').addEventListener('input', updatePreviewAndLinks); updatePreviewAndLinks(); 
+
+    
+    // ... (Tu script del botón de música - no cambió)
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    playPauseBtn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    });
+    music.addEventListener('play', () => {
+      playPauseBtn.innerHTML = '⏸️ Pausar';
+    });
+    music.addEventListener('pause', () => {
+      playPauseBtn.innerHTML = '▶️ Reanudar';
+    });
+    if (music.paused) {
+        playPauseBtn.innerHTML = '▶️ Reproducir';
+    }
+  </script>
+</body>
+</html>
